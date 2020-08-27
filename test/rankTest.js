@@ -81,3 +81,20 @@ test('should_return_A_when_rating_given_history_length_11_and_voyage_with_china_
   const result = rating(voyage, history);
   t.is(result, 'A');
 })
+
+test('should_return_B_when_rating_given_history_length_9_and_voyage_with_china_and_length_19', t => {
+  const voyage = { zone: 'china', length: 19 };
+  const history = [
+    { zone: 'east-indies', profit: 5 },
+    { zone: 'west-indies', profit: 15 },
+    { zone: 'west-africa', profit: 7 },
+    { zone: 'east-africa', profit: 7 },
+    { zone: 'east-indies', profit: 5 },
+    { zone: 'west-indies', profit: 15 },
+    { zone: 'west-africa', profit: 7 },
+    { zone: 'east-africa', profit: 7 },
+    { zone: 'east-africa', profit: 7 }
+  ];
+  const result = rating(voyage, history);
+  t.is(result, 'B');
+})

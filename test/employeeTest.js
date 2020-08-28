@@ -12,3 +12,9 @@ test('should_return_employee_when_new_employee_given_type_manager', t => {
   const actualResult = employee.toString();
   t.is('roy (manager)', actualResult);
 })
+
+test('should_return_employee_when_new_employee_given_type_salesman', t => {
+  const employee = new Employee('roy', 'salesman');
+  const actualResult = employee.toString();
+  t.is('roy (salesman)', actualResult);
+})

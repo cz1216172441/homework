@@ -10,10 +10,22 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@babel/register": "^7.10.5",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "@ava/babel": "^1.0.1",
+    "ava": "^1.0.0",
     "nyc": "^15.1.0"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4"
+    ]
   }
 }

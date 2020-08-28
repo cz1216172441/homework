@@ -19,3 +19,5 @@ class Employee {
     return `${this._name} (${this._type})`;
   }
 }
+
+export default Employee;

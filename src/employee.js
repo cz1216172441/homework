@@ -1,26 +1,10 @@
 class Employee {
-  constructor (name, type) {
-    this.validateType(type);
+  constructor (name) {
     this._name = name;
-    this._type = type;
   }
 
   get name() {
     return this._name;
-  }
-
-  get type() {
-    return this._type;
-  }
-
-  validateType (type) {
-    if (![
-      'engineer',
-      'manager',
-      'salesman',
-    ].includes(type)) {
-      throw new Error(`Employee cannot be of type ${type}`);
-    }
   }
 
   toString () {
@@ -33,11 +17,13 @@ class Engineer extends Employee {
     return 'engineer';
   }
 }
+
 class Manager extends Employee {
   get type() {
     return 'manager';
   }
 }
+
 class Salesman extends Employee {
   get type() {
     return 'salesman';
@@ -53,4 +39,4 @@ function createEmployee(name, type) {
   }
 }
 
-export default Employee;
+export default createEmployee;

@@ -18,3 +18,11 @@ test('should_return_employee_when_new_employee_given_type_salesman', t => {
   const actualResult = employee.toString();
   t.is('roy (salesman)', actualResult);
 })
+
+test('should_return_type_error_when_new_employee_given_error_type', t => {
+  try {
+    new Employee('roy', 'undefinedType');
+  } catch(err) {
+    t.is('Employee cannot be of type undefinedType', err.message);
+  }
+})

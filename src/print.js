@@ -5,11 +5,15 @@ function printOwing(invoice) {
 
   invoice.dueDate = calculateDueDate();
 
-  // print details
-  owing += `name: ${invoice.customer}\n`;
-  owing += `amount: ${outstanding}\n`;
-  owing += `due: ${invoice.dueDate.toLocaleDateString()}\n`;
+  owing += printDetails(invoice, outstanding);
   return owing;
+}
+
+function printDetails(invoice, outstanding) {
+  let details = `name: ${invoice.customer}\n`;
+  details += `amount: ${outstanding}\n`;
+  details += `due: ${invoice.dueDate.toLocaleDateString()}\n`;
+  return details;
 }
 
 function printInvoiceBanner() {

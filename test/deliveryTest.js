@@ -28,3 +28,15 @@ test('should_add_2_days_when_delivery_date_given_rush_and_an_order_with_delivery
   const actualResult = deliveryDate(anOrder, isRush);
   t.is(new Date('2020-09-01').getTime(), actualResult);
 })
+
+test('should_add_3_days_when_delivery_date_given_rush_and_an_order_with_delivery_state_NY', t => {
+  let anOrder = {
+    deliveryState: 'NY',
+    placedOn: {
+      plusDays: plusDays
+    }
+  }
+  const isRush = true;
+  const actualResult = deliveryDate(anOrder, isRush);
+  t.is(new Date('2020-09-02').getTime(), actualResult);
+})

@@ -1,7 +1,5 @@
 function printOwing(invoice) {
-  let owing = '***********************\n' +
-    '**** Customer Owes ****\n' +
-    '***********************\n';
+  let owing = printInvoiceBanner();
   
   let outstanding = 0;
 
@@ -19,6 +17,12 @@ function printOwing(invoice) {
   owing += `amount: ${outstanding}\n`;
   owing += `due: ${invoice.dueDate.toLocaleDateString()}\n`;
   return owing;
+}
+
+function printInvoiceBanner() {
+  return '***********************\n' +
+  '**** Customer Owes ****\n' +
+  '***********************\n';
 }
 
 module.exports = {

@@ -64,3 +64,15 @@ test('should_add_4_days_when_delivery_date_given_rush_and_an_order_with_other_de
   const actualResult = deliveryDate(anOrder, isRush);
   t.is(new Date('2020-09-03').getTime(), actualResult);
 })
+
+test('should_add_4_days_when_delivery_date_given_not_rush_and_an_order_with_delivery_state_MA', t => {
+  let anOrder = {
+    deliveryState: 'MA',
+    placedOn: {
+      plusDays: plusDays
+    }
+  }
+  const isRush = false;
+  const actualResult = deliveryDate(anOrder, isRush);
+  t.is(new Date('2020-09-03').getTime(), actualResult);
+})
